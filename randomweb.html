@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>random</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+        <style>
+            .header{
+                display: grid;
+                grid-template-columns: 2fr 2fr 1.4fr;
+                position: fixed;
+                top: 0;
+                background: black;
+                /* left: 0; */
+                /* right: 0; */
+                /* background: linear-gradient(45deg, #000000 50%, #333333 50%); */
+                z-index: 100;
+                
+                /* width: 100px; */
+            }
+            .mid{
+                /* background-color: blue; */
+                display: grid;
+                grid-template-columns: 150px 150px 150px 150px 150px 150px;
+                padding-top: 20px;
+                margin-top: 0px;
+                font-size: medium;
+                font-family: roboto,arial;
+                transition: background-color 0.7s,color 0.7s,box-shadow 0.15s;
+            }
+            .button-style{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 16px;
+                padding-right: 16px;
+                background: linear-gradient(to top right,#d9a000 50%,#efff00 100%);
+                color: #fff;
+                border: none;
+                margin-top: 9px;
+                border-radius: 7px;
+                font-weight: bold;
+                font-family: roboto;
+                font-size: 13px;
+                transition: background-color 0.7s,color 0.7s,box-shadow 0.15s;
+            } 
+            .button-style:hover{
+                opacity: 0.7;
+                background-color: #d9a000;
+                color: white;
+            }
+            .button-style:active{
+                opacity: 0.5;
+            }
+            .container{
+                transition: background-color 0.7s,color 0.7s,box-shadow 0.15s; 
+                cursor: pointer;
+                position: relative;
+                margin-top: 0;
+            }
+           
+                
+            .options{
+                padding-left:20px ;
+                padding-top: 15px;
+                padding-bottom: 20px;
+                transition: background-color 0.7s,color 0.7s,box-shadow 0.15s;
+                cursor: pointer;
+                animation: colorChange 2s infinite alternate;
+                
+            }
+            .options:hover {
+                  opacity: 0.7;
+                  background-color: rgb(236, 230, 230);
+                  color: #000000;
+                 
+                  /* color: whitesmoke; */
+            }
+            
+            .container .tooltip{
+                font-family: roboto,arial;
+                position: absolute;
+                opacity: 0;
+                bottom: -140px;
+                transition: opacity 0.8s;
+                pointer-events: none;
+                border-style: dashed;
+                border-color:  rgb(236, 230, 230);
+                border-width: 1px;
+                /* animation: colorChange 2s infinite alternate; */
+                background-color: white ;
+                color: black;
+            }
+            .container:hover .tooltip{
+                opacity: 1;
+                
+            }
+            .link-style{
+                text-decoration: none;
+                color: inherit;
+            }
+            .container1{
+                /* transition: background-color 0.7s,color 0.7s,box-shadow 0.15s; */
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; 
+                cursor: pointer;
+                position: relative;
+                animation: colorChange 2s infinite alternate;
+            }
+            .container1 .tooltip{
+                font-family: roboto,arial;
+                padding-right: 40px;
+                position: absolute;
+                opacity: 0;
+                bottom: -196px;
+                transition: opacity 0.8s;
+                animation: colorChange 2s infinite alternate;
+                pointer-events: none;
+                border-style: dashed;
+                border-color:  rgb(236, 230, 230);
+                border-width: 1px;
+                background-color: white ;
+                color: black;
+            }
+            .tooltip:hover{
+               background-color:linear-gradient(45deg, #ffffff 50%, #f0f0f0 50%) ;  
+            }
+            .container1:hover .tooltip{
+                opacity: 1;
+            }
+            .container2{
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; 
+                cursor: pointer;
+                position: relative;
+                animation: colorChange 2s infinite alternate;
+            }
+            .container2 .tooltip{
+               font-family: roboto,arial;
+                padding-right: 40px;
+                position: absolute;
+                opacity: 0;
+                bottom: -220px;
+                transition: opacity 0.8s;
+                animation: colorChange 2s infinite alternate;
+                pointer-events: none;
+                border-style: dashed;
+                border-color:  rgb(236, 230, 230);
+                border-width: 1px;
+                background-color: white;
+                color: black;        
+                
+            }
+            .container2:hover .tooltip{
+               opacity: 1;
+               
+            }
+            .inner-content{
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                height: 300px;
+                margin-top: 250px;
+                z-index: -20;
+                
+            }
+            .div-in-div{
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                border-style: double;
+                border-color:linear-gradient(to top right,#d9a000 50%,#efff00 100%); 
+                border-radius: 3px;
+                transform: translateX(-100%);
+                transition: transform 1s ease-in-out;
+            }
+            .div-in-div:hover{
+                
+                box-shadow:   5px 5px 5px rgba(240, 237, 237, 0.735);
+            }
+            .image-in-div{
+                height: fit-content;
+                border-radius: 70%;
+                margin-top: 28px;
+            }
+            .div-out-div{
+                margin-left: 20%;
+                margin-top: 8%;
+                /* border-style: dotted; */
+                /* border-color: #d9a000; */
+            }
+            .input-bar{
+                
+                padding-left: 40px;
+                padding-right: 80px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                font-family: roboto,arial;
+                font-size: 16px;
+                font-weight: 500;
+                border-radius: 6px;
+            }
+
+            
+        </style>
+    </head>
+    <body style="background: linear-gradient(45deg, #000000 50%, #333333 50%);color: whitesmoke;margin-bottom: 2000px;">
+        <div class="header">
+            <div>
+                <img style="background: linear-gradient(45deg, #ffffff 50%, #f0f0f0 50%);margin-top: 20px;"src="logo.svg">
+            </div>
+            <div class="mid">
+                <div class="container">
+                    <div class="options">Services</div>
+                    <!-- <div class="item item1"><a href="https://www.globalspec.com/" >&#183; App Development</a></div>
+                    <div class="item item2"><a href="https://www.codecademy.com/">&#183; Web Development</a></div>
+                    <div class="item item3"><a href="https://www.pulsecollege.com/">&#183; Game Development</a></div>
+                    <div class="item item4"><a href="https://blog.hubspot.com/">&#183; marketing</a></div> --> 
+                    <div class="tooltip">
+                        <p ><a href="https://www.globalspec.com/" class="link-style">&#183; App Development</a></p>
+                        <p>&#183; Web Development</p>
+                        <p>&#183; Game Development</p>
+                        <p>&#183; Marketing</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="container1">
+                        <div class="options">Company</div>
+                        <div class="tooltip">
+                            <p>&#183; About us</p>
+                            <p>&#183; Career</p>
+                            <p>&#183; Infrastructure</p>
+                            <p>&#183; Blog</p>
+                            <p>&#183; Contact Us</p>
+                        </div>
+                    </div>
+                    
+                </div>   
+                <div class="container1">
+                    <div class="options">Game</div>
+                    <div class="tooltip">
+                        <p>&#183; Mobile Game</p>
+                        <p>&#183; Video Game</p>
+                        
+                        <p>&#183; IOS Game</p>
+                        <p>&#183; Android Game</p>
+                        <p>&#183; Unity Game</p>
+                    </div>
+                </div>
+                <div class="container1">
+                    <div class="options">Blockchain</div>
+                    <div class="tooltip">
+                        <p>&#183; NFT Development</p>
+                        <p>&#183; NFT Marketplace</p>
+                        <p>&#183; Smart Contract</p>
+                        
+                        <p>&#183; Contact Us</p>
+                    </div>
+                </div>
+                <div class="container2">
+                   <div class="options">Hire developers</div>
+                   <div class="tooltip">
+                        <p >&#183; PHP Developers</p>
+                        <p >&#183; Python Developers</p>
+                        <p>&#183; Flutter Developers</p>
+                        
+                        <p>&#183; Full Stack Developers</p>
+                   </div>
+                </div>
+                
+               
+            </div>
+            <div>
+                <button class="button-style">Request a Quote &#8599;</button>
+            </div>
+        </div>
+        <div class="inner-content">
+            <div class="div-in-div">
+              <div>
+                <img class="image-in-div" src="https://tse2.mm.bing.net/th?id=OIP.n7-6B9vAugjT7ZkKsixJMQHaE8&pid=Api&P=0&h=220">
+              </div>
+              <div>
+                <p style="justify-content: center;">
+                    <ul>
+                      <li>Our tailor-made enterprise e-commerce solutions comprise a range of products and IT services that gives a dynamic boost to your business.</li>
+                      <li>Our design engineers have hands-on experience using immersive technologies such as IoT, Blockchain, AR, MR, and VR to enhance real-time experiences.</li>
+                      <li>Our certified web developers work across the latest technologies to develop scalable websites and web applications for your business growth.</li>
+                      <li>Turn your gaming visions into reality by creating stunning games that work flawlessly on Android, iOS and Console devices.             </li>
+                      <li>As the best mobile app development company, we are experts in developing native and cross-platform mobile apps suitable for all business verticals.</li>
+                    </ul>
+                    
+                </p>
+              </div>
+              <script>
+                // Adding JavaScript to trigger the animation after page load
+                document.addEventListener("DOMContentLoaded", function(event) {
+                  document.querySelector('.div-in-div').style.transform = 'translateX(0)';
+                });
+              </script>
+            
+            </div>
+            <div class="div-out-div">
+                <form name="enter" method="post" onsubmit="">
+                    <input class="input-bar" type="text" name="text-enter" placeholder="Enter name">
+                    <label for="text-enter"></label>
+                </form>
+            </div>
+            
+            
+        </div>
+    </body>
+</html>

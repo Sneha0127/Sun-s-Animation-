@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Netflix</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+           html, body{
+                background-color: black;
+                font-family: sans-serif;
+                font-weight: bold;
+                width: 100%;
+                height: 100%;
+            }
+            .text{
+                position: absolute;
+                /* z-index: 2; */
+            }
+            .image{
+                position: relative;
+                max-height: 700px;
+                max-width: 1270px;
+            }
+            .logo img{
+                height: 78px;
+                width: 180px;
+                align-items: center;
+                margin-left: 130px;
+                margin-top: 0;
+            }
+            .header{
+                display: flex;
+                z-index: 2;
+                /* flex-direction: column; */
+                justify-content: space-between;
+                position: absolute;
+                /* background-color: gray; */
+            }
+            .translate-img img{
+               height: 20px;
+               width:25px ;
+               margin-top: 50px;
+               background-color: black;
+               padding-bottom: 70px;
+            }
+            .select1{
+                /* position: absolute; */
+                
+                margin-top: 0; 
+                border-style: solid;
+                border: 1px;
+                display: flex;
+                height: 40px;
+                margin-left: 600px;
+                padding-right: 20px;
+                border-color:white;
+            }
+            .select2{
+                margin-top: 0; 
+                border-style: solid;
+                border: 1px;
+                display: flex;
+                height: 40px;
+                margin-left: 130px;
+                padding-right: 20px;
+                border-color:white;
+            }
+
+            select{
+                height: 30px;
+                /* width: 40px; */
+                margin-top: 30px;
+                border-width: 1.3px;
+                border-radius: 3px;
+                padding-left: 20px;
+                padding-right: 18px;
+                background-color: rgb(24, 23, 23);
+                color: white;
+                z-index: 1;
+                opacity: 0.9;
+                font-size: large;
+                font-family: sans-serif;
+                font-weight: 500;
+                /* padding-top: 5px; */
+                /* padding-bottom: 20px; */
+            }
+            .button1{
+                background-color: rgb(248, 15, 15);
+                color: white;
+                font-size: medium;
+                font-family: sans-serif;
+                font-weight: 600;
+                border: none;
+                cursor: pointer;
+                letter-spacing: 0.05em;
+                border-radius: 6px;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                margin-top: 28px;
+                margin-left: 5px;
+            }
+            .button1:hover{
+                opacity: 0.7;
+            }
+            .first{
+                display: flex;
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                opacity: 0.5;
+                /* display: inline-block; */
+            }
+            .first img{
+                flex: 1;
+                max-width: 100%;
+            }
+            .first::before{
+                content: ""; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30%; /* Adjust the height of the darkened top */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 1.0), transparent); /* Adjust the gradient colors as needed */
+            z-index: 1; /* Ensure the overlay is above the image */
+            }
+            .mid-text h1{
+               position: absolute;
+               margin-top: 0;
+               color: white;
+               display: flex;
+               justify-content: center;
+               font-family: sans-serif;
+               font-size: 50px;
+               /* font-size: 4vw; */
+               z-index: 2;
+               /* width: 1000px; */
+               /* letter-spacing: 0.3rem; */
+               margin-left: 85px;
+               top: 240px;
+               font-weight: bolder;
+               /* align-items: center; */
+               text-align: center;
+            }
+            .mid-text h4{
+               position: absolute;
+               margin-top: 0;
+               color: white;
+               display: flex;
+               justify-content: center;
+               font-family: sans-serif;
+               font-size: 25px;
+               z-index: 2;
+               /* width: 1000px; */
+               /* letter-spacing: 0.3rem; */
+               margin-left: 430px;
+               top: 350px;
+               font-weight:400 ;
+               /* align-items: center; */
+               text-align: center;
+            }
+            .mid-text p{
+                position: absolute;
+               margin-top: 0;
+               color: white;
+               display: flex;
+               justify-content: center;
+               font-family: roboto;
+               font-size: 23px;
+               z-index: 2;
+               /* width: 1000px; */
+               /* letter-spacing: 0.3rem; */
+               margin-left: 280px;
+               top: 420px;
+               font-weight: 200 ;
+               /* align-items: center; */
+               text-align: center;
+            }
+            .search-bar{
+                display: flex;
+                margin-left: 380px;
+                top: 470px ;
+                position: absolute;
+
+                
+            }
+            .search{
+                padding-left: 20px;
+                padding-right: 190px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background-color: rgb(37, 35, 35);
+                color: white;
+                border: 1px;
+                border-style: solid;
+                border-radius: 3px;
+                z-index: 1;
+                opacity: 0.9;
+            }
+            .search::placeholder{
+                font-size: 17px;
+                font-family: sans-serif;
+                font-weight: 200;
+                color: white;
+                z-index: 2;
+            }
+            .button2{
+                margin-left: 15px;
+                padding-left: 26px;
+                padding-right: 25px;
+                padding-top: 8px;
+                border-radius: 5px;
+                font-size: larger;
+                font-weight: 700;
+                cursor: pointer;
+                letter-spacing: 0.02em;
+                padding-bottom: 8px;
+                background-color: rgb(248, 15, 15);
+                border: none;
+                color: white;
+                z-index: 2;
+            }
+            .button2:hover{
+                opacity: 0.9;
+            }
+            .row{
+                display: flex;
+                flex: 1;
+                height: 8px;
+                background-color: rgb(83, 82, 82);
+             }
+            .divide{
+                display: flex;
+                margin-bottom: 40px;
+                /* flex-direction: column; */
+            }
+            .left-section h1{
+                /* position: absolute; */
+               margin-top: 160px;
+               color: white;
+               display: flex;
+               /* justify-content: center; */
+               font-family: sans-serif;
+               font-size: 50px;
+               z-index: 2;
+               /* width: 1000px; */
+               /* letter-spacing: 0.3rem; */
+               margin-left: 140px;
+               /* top: 260px; */
+               font-weight: bolder;
+               /* align-items: center; */
+               /* text-align: center; */
+            }
+            .left-section h4{
+                /* position: absolute; */
+               margin-top: 40px;
+               color: white;
+               display: flex;
+               /* justify-content: center; */
+               font-family: sans-serif;
+               font-size: 25px;
+               z-index: 2;
+               /* width: 1000px; */
+               /* letter-spacing: 0.3rem; */
+               margin-left: 140px;
+               /* top: 350px; */
+               font-weight:400 ;
+               /* align-items: center; */
+               /* text-align: center; */
+            }
+            .right-section{
+                position: relative;
+            }
+            .right-section img{
+                /* position: ; */
+                position: relative;
+                margin-top: 100px;
+                margin-left: 70px;
+                height: 360px;
+                width: 450px;
+                z-index: 2;
+            }
+            .video-edit {
+                position: absolute;
+                top: 125px;
+               z-index: 1;
+                margin-left:130px ;
+                height:200px ;
+                width:350px;
+            }
+            video{
+                height:290px ;
+                width:330px;
+                z-index: 3;
+                /* top: 40px; */
+            }
+            .girl img{
+                height: 420px;
+                width: 500px;
+                margin-left: 120px;
+                margin-top: 50px;
+                position: relative;
+            }
+            .divide1{
+                display: flex;
+                flex-direction: row;
+                /* margin-bottom: 100px; */
+            }
+            .inner-divide{
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                height: 30px;
+                margin-bottom: 550px;
+            }
+            .box{
+                display: flex;
+                border-style: solid;
+                border-color: white;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                background-color: black;
+                padding-right: 0;
+                border-radius: 13px;
+                position: absolute;
+                width: 300px;
+                top: 1540px;
+                left: 230px;
+                /* margin-left: 50%; */
+            }
+            .book img{
+              height: 70px;
+              width: 50px;
+              margin-top: 10px;
+              margin-left: 10px;
+            }
+            .written h4{
+                margin-top: 20px;
+                font-size: medium;
+                font-family: sans-serif;
+                font-weight: 700;
+                color: white;
+                margin-bottom: 0;
+                margin-left: 20px;
+            }
+            .written p{
+                margin-top: 0;
+                font-size: 16px;
+                font-family: roboto;
+                color: blue;
+                font-weight: 200;
+                margin-left: 20px;
+                margin-bottom: 0;
+            }
+            .download{
+                display: block;
+                top: 0;
+                bottom: 0;
+                height: 6rem;
+                /* margin-bottom: 30px; */
+                width: 6rem;
+                background: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif')
+            }
+            .divide1-right h1{
+                font-size: 50px;
+                font-family: sans-serif;
+                font-weight: bolder;
+                color: white;
+                margin-left: 330px;
+                margin-top: 150px;
+            }
+            .divide1-right h3{
+                font-size: 25px;
+                font-family: roboto;
+                color: white;
+                margin-left: 330px;
+                line-height: 40px;
+                margin-top: 10px ;
+                font-weight: 200;
+                letter-spacing: 0.03em;
+            }
+            .sneha{
+                margin-top: 80px;
+            }
+            .sneha h1{
+                font-size: 50px;
+                color: white;
+                font-weight: bolder;
+                margin-left: 160px;
+                letter-spacing: 0.001rem;
+                margin-top: 50px;
+            }
+            .sneha h3{
+                color: white;
+                font-size: 25px;
+                font-weight: 200;
+                margin-left: 160px;
+            }
+            .saif{
+                margin-top: 60px;
+                margin-left: 20px;
+                position: relative;
+                /* z-index: 1; */
+            }
+            .saif img{
+                height: 370px;
+                width: 460px;
+                z-index: 3;
+                position: relative;
+            }
+            .video2{
+                position: absolute;
+                /* top: 1830px; */
+                top: 0px;
+                z-index: 1;
+                 /* top: 0; */
+                 margin-top:0px;
+                /* left:770px; */
+                margin-left: 75px;
+                max-width: 100%;
+                max-height: 100%;
+            }
+            .saif video{
+                position: absolute;
+                /* height: 297px; */
+                height: max-content;
+                /* width: 290px; */
+                width: 300px;
+                /* width: min-content; */
+                margin-top: 25px;
+                z-index: 1;
+                object-fit: contain;
+                overflow: clip;
+                float: inline-end;
+            }
+            .divide1-right1 h1{
+                font-size: 40px;
+                font-family: sans-serif;
+                font-weight: bolder;
+                color: white;
+                margin-left: 30px;
+                margin-top: 130px;
+            }
+            .divide1-right1 h3{
+                font-size: 25px;
+                font-family: roboto;
+                color: white;
+                margin-left: 30px;
+                line-height: 40px;
+                margin-top: 0px ;
+                font-weight: 200;
+                letter-spacing: 0.03em;
+            }
+            .child img{
+                height: 400px;
+                width: 450px;
+                margin-top: 80px;
+                margin-right: 40px;
+                margin-left: 90px;
+            }
+            .divide2{
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 80px;
+            }
+            .ques{
+                font-size: 45px;
+                color: white;
+                font-weight: bolder;
+                text-align: center;
+                margin-top: 60px; 
+            }
+            .series{
+                display: flex;
+                height: 10px;
+                width: 960px;
+                flex-direction: column;
+                /* align-items: center; */
+                margin-left: 150px;
+                margin-top: 30px;
+
+            }
+            .series .first:hover{
+                background-color: gray;
+            }
+            
+            .first3 h3,.second h3,.third h3,.fourth h3,.fifth h3,.sixth h3{
+                display: flex;
+                cursor: pointer;
+                /* flex-direction: ; */
+                align-items: center;
+                color: white;
+                background-color: rgb(52, 50, 50);
+                padding-top: 20px;
+                width: 960px;
+                height: 40px;
+                padding-bottom: 20px;
+                margin-bottom: 0px;
+                padding-left: 22px;
+                margin-top: 0;
+                font-size: 23.5px;
+
+                font-weight: 200;
+                font-family: roboto;
+                letter-spacing: 0.03em;
+            }
+            .first3:hover,.first3 h3:hover,.second h3:hover,.second:hover,.third:hover,.third h3:hover,.fourth:hover,.fourth h3:hover,.fifth h3:hover,.fifth:hover,.sixth h3:hover,.sixth:hover{
+                /* opacity: 0.8; */
+                background-color: rgb(97, 95, 95);
+                transition: background-color 0.5s ease; 
+            }
+            .first3,.second,.third,.fourth,.fifth,.sixth{
+                display: flex;
+                flex-direction: row;
+                
+                background-color: rgb(52, 50, 50);
+                margin-bottom: 15px;
+            }
+            .plus{
+                text-align: end;
+                display: flex;
+                flex-direction: row; 
+                justify-content: end; 
+                 font-size: 50px;
+                font-weight: 100;
+                font-family: roboto;
+                background-color: inherit;
+                cursor: pointer;
+                padding-top: 13px;
+                padding-right: 20px;
+                color: white;
+                /* height: 100px; */
+            }
+            .end-text{
+                margin-bottom: 40px;
+            }
+            .end-text p{
+                
+               margin-top: 590px;
+               color: white;
+               display: flex;
+               justify-content: center;
+               font-family: roboto;
+               font-size: 20px;
+               /* z-index: 2; */
+               /* width: 1000px; */
+               /* letter-spacing: 0.3rem; */
+               margin-left: 10px;
+               /* top: 420px; */
+               font-weight: 200 ;
+               /* align-items: center; */
+               text-align: center;
+            }
+            .search-bar2{
+                display: flex;
+                margin-left: 330px;
+                top: 470px ;
+                margin-bottom: 80px;
+                /* position: absolute; */
+            }
+            .para{
+               font-size: 16px;
+               color: rgb(197, 186, 186);
+               font-weight: 100;
+               font-family: roboto;
+               margin-left: 130px;
+               margin-top: 60px;
+            }
+            .footer{
+                margin-bottom: 0px;
+                display: flex;
+                flex-direction: row;
+                
+            }
+            .row1,.row2,.row3,.row4{
+                display: flex;
+                flex-direction: column;
+                margin-top: 8px;
+                margin-left: 130px ;
+                cursor: pointer;
+            }
+            .row1 p,.row2 p,.row3 p,.row4 p{
+                font-size: 14px;
+               color: rgb(197, 186, 186);
+               font-weight: 100;
+               font-family: roboto;
+               /* margin: 0; */
+               margin-bottom: 5px;
+               padding: 0;
+               gap: 0;
+            }
+            .end{
+                margin-bottom: 50px;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <form action="/action_page.php">
+            <div class="header">
+                <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7668 5.33333L10.5038 5.99715L9.33974 8.9355L8.76866 10.377L7.33333 14H9.10751L9.83505 12.0326H13.4217L14.162 14H16L12.5665 5.33333H10.8278H10.7668ZM10.6186 9.93479L10.3839 10.5632H11.1036H12.8856L11.6348 7.2136L10.6186 9.93479ZM9.52722 4.84224C9.55393 4.77481 9.58574 4.71045 9.62211 4.64954H6.41909V2H4.926V4.64954H0.540802V5.99715H4.31466C3.35062 7.79015 1.75173 9.51463 0 10.4283C0.329184 10.7138 0.811203 11.2391 1.04633 11.5931C2.55118 10.6795 3.90318 9.22912 4.926 7.57316V12.6667H6.41909V7.51606C6.81951 8.15256 7.26748 8.76169 7.7521 9.32292L8.31996 7.88955C7.80191 7.29052 7.34631 6.64699 6.9834 5.99715H9.06968L9.52722 4.84224Z" fill="currentColor"></path> -->
+                <div class="logo">
+                    <img src="Netflix_Logo_PMS.png">
+                </div>
+                <div class="select1">
+                    <!-- <div class="translate-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYkpsE0N56cAwhSlO5D7F01z8IX8IoYOgpOLA5dZKVcx-bjvTFEAYYGqz5-RgiKQAWWE4&usqp=CAU"></div> -->
+                    <select >
+                        
+                        <option label="English" lang="en" value="en-IN" selected>English</option>
+                        <option label="Hindi" lang="hi" value="hi-IN">Hindi</option>
+                    </select>    
+                </div>
+                    
+                <div >
+                    <button class="button1">Sign In</button>
+                </div>   
+            </div>
+
+            <div class="first">
+                
+                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/16006346-87f9-4226-bc25-a1fb346a2b0c/9662d0fd-0547-4665-b887-771617268815/IN-en-20240115-popsignuptwoweeks-perspective_alpha_website_large.jpg">
+            </div>
+            <div class="mid-text">
+                <h1>Unlimited movies, TV shows and more</h1>
+                <h4>Watch anywhere. Cancel anytime</h4>
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            </div>
+            <div class="search-bar">
+                <input class="search" type="email" placeholder="Email address">
+                <button class="button2">Get Started ></button>
+            </div>
+            <div class="row"></div>
+            <div class="divide">
+                <div class="left-section">
+                   <h1>Enjoy on your TV</h1>
+                   <h4>Watch on smart TVs, PlayStation, Xbox,<br> Chromecast, Apple TV, Blu-ray players and <br>more.</h4>
+                </div>
+                <div class="right-section">
+                    <img src="images.css/tv.png">
+                    <div class="video-edit">
+                       <video playsinline autoplay muted loop>
+                           <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
+                       </video>
+                    </div> 
+                  
+                 
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="divide1">
+                <div class="inner-divide">
+                    <div class="girl">
+                        <img src="images.css/mobile-0819.jpg">
+                    </div>
+                    <div class="box">
+                        <div class="book">
+                           <img src="images.css/boxshot.png">
+                        </div>
+                        <div class="written">
+                           <h4>Stranger Things </h4>
+                           <p>Downloading...</p>
+                        </div>
+                        <div class="download">
+                          
+                        </div>
+                    </div>    
+                </div>
+                <div class="divide1-right">
+                    <h1>
+                        Download your <br> shows to watch <br>offline
+                    </h1>
+                    <h3>Save your favourites easily and always have <br> something to watch.</h3>
+                </div>
+               
+               
+            </div>
+            <div class="row"></div>
+            <div class="divide">
+                <div class="sneha">
+                   <h1>
+                    Watch everywhere
+                   </h1>
+                   <h3>
+                    Stream unlimited movies and TV shows on<br> your phone, tablet, laptop, and TV.
+                   </h3>
+                </div>
+                <div class="saif">
+                  <img src="images.css/device-pile-in.png">
+                  <div class="video2">
+                    <video autoplay playsinline muted loop>
+                        <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4">
+                    </video>
+                  </div>
+                  
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="divide2">
+                <div class="child">
+                  <img src="images.css/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png">
+                </div>
+                <div class="divide1-right1">
+                   <h1>Create profiles for <br> kids</h1>
+                   <h3>Send children on adventures with their <br>favourite characters in a space made just for <br>them—free with your membership.</h3>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="sec-last">
+                <div class="ques">
+                    Frequently Asked Questions
+                </div>
+                <div class="series">
+                    <div class="first3">
+                       <h3>What is Netflix?</h3>
+                       <div class="plus">+</div>
+                    </div>
+                    <div class="second">
+                       <h3>How much does Netflix cost?</h3>
+                       <div class="plus">+</div>
+                    </div>
+                    <div class="third">
+                        <h3>Where can I watch?</h3>
+                        <div class="plus">+</div>
+                    </div>
+                    <div class="fourth">
+                        <h3>How do I cancel?</h3>
+                        <div class="plus">+</div>
+                    </div>
+                    <div class="fifth">
+                        <h3>
+                            What can I watch on Netflix?
+                        </h3>
+                        <div class="plus">+</div>
+                    </div>
+                    <div class="sixth">
+                        <h3>Is Netflix good for kids?</h3>
+                        <div class="plus">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="end-text">
+                    <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            </div>
+            <div class="search-bar2">
+                    <input class="search" type="email" placeholder="Email address">
+                    <button class="button2">Get Started ></button>
+            </div>
+            <div class="row"></div>
+            <p class="para">Questions? Call <u>000-800-919-1694</u></p>
+            <div class="footer">
+               
+               <div class="row1">
+                 <p><u>FAQ</u></p>
+                 <p><u>Investor Relations</u></p>
+                 <p><u>Privacy</u></p>
+                 <p><u>Speed Test</u></p>
+                 <!-- <select>
+                    <option label="English" lang="en" value="en-IN" selected>English</option>
+                    <option label="Hindi" lang="hi" value="hi-IN">Hindi</option>
+                 </select> -->
+               </div>
+               <div class="row2">
+                <p><u>Help Centre</u></p>
+                <p><u>Jobs</u></p>
+                <p><u>Cookie Preferences</u></p>
+                <p><u>Legal Notices</u></p>
+               </div>
+               <div class="row3">
+                 <p><u>Account</u></p>
+                 <p><u>Ways to watch</u></p>
+                 <p><u>Coperate Information</u></p>
+                 <p><u>Only on Netflix</u></p>
+               </div>
+               <div class="row4">
+                 <p><u>Media Centre</u></p>
+                 <p><u>Terms of Use</u></p>
+                 <p><u>Contact Use</u></p>
+                 
+               </div>
+               
+            </div>
+            <div class="select2">
+                <select>
+                    <option label="English" lang="en" value="en-IN" selected>English</option>
+                    <option label="Hindi" lang="hi" value="hi-IN">Hindi</option>
+                </select>
+            </div>
+            <div class="end">
+                <div class="row1">
+                    <p style="margin-top: 30px; cursor: auto;">Netflix India</p>
+                </div>
+            </div>
+            
+           
+        </form>
+        
+    </body>
+</html

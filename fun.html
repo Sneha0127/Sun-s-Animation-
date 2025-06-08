@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed Position within Certain Area</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .fixed-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px; /* Set the maximum width for the fixed container */
+      margin: 0 auto; /* Center the container */
+      padding: 20px; /* Optional: Add padding for better aesthetics */
+    }
+    .fixed-element {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f0f0f0;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .content {
+      margin-top: 60px; /* Adjust to create space for the fixed element */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="fixed-container">
+  <div class="fixed-element">
+    <p>This is a fixed element within a certain area.</p>
+  </div>
+</div>
+
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+  <!-- Your main content goes here -->
+</div>
+
+</body>
+</html>

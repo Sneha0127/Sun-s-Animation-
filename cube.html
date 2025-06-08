@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background: linear-gradient(black 70%,rgb(97, 13, 13) );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+          .cube{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            /* gap: 2px; */
+           justify-content: center;
+           align-items: center;
+          margin-top: 170px;
+          transform-style: preserve-3d;
+          
+          /* perspective: 580px; */
+          animation: rotate 8s linear infinite alternate-reverse;
+           /* text-align: center; */
+          }
+          .up{
+            background: linear-gradient(black , rgb(144, 30, 49));
+            height: 200px;
+            width: 200px;
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+            /* transform-style: preserve-3d; */
+            /* perspective: 3000px; */
+          }
+          .left{
+            background: linear-gradient(black , rgb(144, 30, 49));
+            height: 200px;
+            width: 200px;
+            transform-origin: right;
+            transform: rotateY(90deg);
+          }
+          .front1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            transform-style: preserve-3d;
+          }
+          .front{
+            background: linear-gradient(black , rgb(144, 30, 49));
+            height: 200px;
+            width: 200px;
+          }
+          .right{
+            background: linear-gradient(black , rgb(144, 30, 49));
+            height: 200px;
+            width: 200px;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+          }
+          .down{
+            background: linear-gradient(black , rgb(144, 30, 49));
+            height: 200px;
+            width: 200px;
+            transform-origin: top;
+            transform: rotateX(90deg);
+          }
+          .back{
+            background: linear-gradient(black , rgb(144, 30, 49));
+            height: 200px;
+            width: 200px;
+            /* transform-origin:right; */
+            position: absolute;
+            transform: translateZ(200px);
+            /* transform: rotateX(90deg); */
+          }
+          .left img,.front img,.right img,.up img,.back img,.down img{
+            height: 200px;
+            width: 200px;
+          }
+          @keyframes rotate{
+            0%{
+              transform: rotateX(0deg) rotateY(0deg);
+            }
+            100%{
+               transform: rotateX(50deg) rotateY(360deg) rotateZ(180deg);
+            }
+          }
+        </style>
+        </head>
+    <body>
+        <div class="cube">
+            <div class="up"><img src="https://tse4.mm.bing.net/th?id=OIP.rBtv8R3JGhKrsQc8nYBqgAHaFj&pid=Api&P=0&h=220" alt=""></div>
+     <div class="front1">
+
+         <div class="left"><img src="https://tse4.mm.bing.net/th?id=OIP.STP1XITH9uoxv3yGhdcsWAAAAA&pid=Api&P=0&h=220" alt="photu"></div>
+         <div class="front"><img src="https://tse1.mm.bing.net/th?id=OIP.Gh8QtnFEh8LOj1a6-Q88FQHaFj&pid=Api&P=0&h=220" alt=""></div>
+         <div class="right"><img src="https://tse1.mm.bing.net/th?id=OIP.-DwH0PO5tbZ1l4hA-4U6lAHaFj&pid=Api&P=0&h=220" alt=""></div>
+        </div>
+        <div class="down"><img src="https://tse4.mm.bing.net/th?id=OIP.1VuOvBxVIjoiD0Uvx4-ouwHaHa&pid=Api&P=0&h=220" alt=""></div>
+        <div class="back"><img src="https://tse3.explicit.bing.net/th?id=OIP.jNdtVpi5oF21jGHNW5zKlQHaEo&pid=Api&P=0&h=220" alt=""></div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>bubbles</title>
+        <style>
+            .body{
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            }
+            .body2{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                margin-left: 70px;
+            }
+            @keyframes bubble2{
+                0%{
+                    transform: translateY(-20px);
+                }
+                100%{
+                    transform: translateY(550px);
+                }
+            }
+            .b7{
+                animation: bubble 1s 0s infinite linear;
+            }
+            .b8{
+                animation: bubble 2s 0s infinite linear;
+            }
+            .b9{
+                animation: bubble 3s 0s infinite linear;
+            }
+            .b10{
+                animation: bubble 4s 0s infinite linear;
+            }
+            .b11{
+                animation: bubble 1s 0s infinite linear;
+            }
+            .b12{
+                animation: bubble 2s 0s infinite linear;
+            }
+           @keyframes bubble{
+            0%{
+                transform: translateY(-20px);
+                transform: translateX(-20px);
+            }
+            25%{
+                transform: translateY(300px);
+                transform: translateX(300px);
+            }
+            50%{
+                transform: translateY(400px);
+                transform: translateX(600px);
+            }
+            75%{
+                transform: translateY(1000px);
+                transform: translateX(2000px);
+            }
+            100%{
+                transform: translateY(200px);
+                transform: translateX(-20px);
+            }
+           }
+           .b1{
+            animation: bubble 1s 0s infinite linear;
+           }
+           .b2{
+            animation: bubble 2s 0s infinite linear;
+           }
+           .b3{
+            animation: bubble 3s 0s infinite linear;
+           }
+           .b4{
+            animation: bubble 4s 0s infinite linear;
+           }
+           .b5{
+            animation: bubble 1s 0s infinite linear;
+           }
+           .b6{
+            animation: bubble 2s 0s infinite linear;
+           }
+        </style>
+    </head>
+    <body style="background-color: rgb(10, 9, 9);">
+        <div class="body2">
+            <img class="b7"src="bubble2.jpg" height="60px" width="80px" >
+            <img class="b8"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b9"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b10"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b11"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b12"src="bubble2.jpg" height="60px" width="80px">
+        </div>
+        <div class="body">
+            <img class="b1"src="bubble2.jpg" height="60px" width="80px" >
+            <img class="b2"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b3"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b4"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b5"src="bubble2.jpg" height="60px" width="80px">
+            <img class="b6"src="bubble2.jpg" height="60px" width="80px">
+        </div>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,27 @@
+// Server.java
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.registry.Registry;
+import java.rmi.registry.LocateRegistry;
+
+public class Server extends UnicastRemoteObject implements RemoteInterface {
+    public Server() throws RemoteException {
+        super();
+    }
+
+    @Override
+    public String sendMessage(String message) throws RemoteException {
+        return "Server received: " + message;
+    }
+
+    public static void main(String[] args) {
+        try {
+            Server server = new Server();
+            Registry registry = LocateRegistry.createRegistry(1099); // Default RMI port
+            registry.bind("RemoteInterface", server);
+            System.out.println("Server is running...");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

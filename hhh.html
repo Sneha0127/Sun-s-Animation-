@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>new</title>
+        <script>
+            function gett(event) {
+                
+                let num = document.querySelector('.fnum').value;
+                
+                
+                if (num.length != 10) {
+                   
+                    alert("Invalid Phone");
+                    
+                    
+                    event.preventDefault();
+                }
+            }
+
+           
+        </script>
+    </head>
+    <body>
+        <center>
+            <h3><u>Registration Page</u></h3>
+            <table border="3px">
+                <tr>
+                    <td>
+                        <form name="name" action="" method="post" onsubmit="gett(event);">
+                            <table cellspacing="10" cellpadding="5">
+                                <tr>
+                                    <td>Name</td>
+                                    <td>
+                                        <input type="text" size="25" name="name" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Father's Name</td>
+                                    <td>
+                                        <input type="text" name="fname" size="25">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Present Address</td>
+                                    <td>
+                                        <input type="text" name="fadd" size="25">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Permanent Address</td>
+                                    <td>
+                                        <input type="text" name="fpadd" size="25">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>City</td>
+                                    <td>
+                                        <input type="text" name="fcity" size="25">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Course</td>
+                                    <td>
+                                        <select name="choose">
+                                            <option>CSE</option>
+                                            <option>ECE</option>
+                                            <option>EEE</option>
+                                            <option>IT</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>
+                                        <input type="email" name="fmail" class="fmaill" size="25">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile No.</td>
+                                    <td>
+                                        <input type="number" class="fnum" name="fnum" size="30">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>DOB</td>
+                                    <td>
+                                        <input type="date" name="fdob" size="30">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="reset" name="Reset">
+                                    </td>
+                                    <td>
+                                        <input type="submit" name="Submit">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>

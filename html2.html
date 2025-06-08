@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html 
+<head>
+    <title>follow_her</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .follow-button{
+            background-color: rgb(64, 162, 201);
+            padding-top: 9px;
+            padding-bottom: 9px;
+            padding-right: 15px;
+            padding-left: 15px;
+            border:none;
+            border-radius: 5px;
+            color: white;
+            cursor:pointer;
+            transition: background-color 0.7s,color 0.7s,box-shadow 0.15s;
+            font-family: roboto;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .follow-button:hover{
+            opacity: 0.8;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.15);
+        }
+        .picture{
+            height: 150px;
+             width: 150px;
+            
+        }
+        .profile-picture{
+            /* background-color: blue; */
+            height: 40px;
+            width: 60px;
+        }
+        /* .catpic{
+            height: 60px;
+            width: 80px;
+            border-radius: 50%;
+        } */
+        .edit{
+            display: grid;
+            grid-template-rows: 150px 100px;
+            /* background-color: lightblue; */
+            
+        }
+        .row-2{
+             display: grid;
+             grid-template-rows: 1fr 1fr 1fr;
+             
+        }
+        .row-2-2{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="edit">
+     <div>
+      <div class="picture">
+       <img class="catpic" src="catpic.jpeg">
+      </div>
+      <div class="profile">
+       <p class="text1">oliver</p>
+       <p class="text2">the cat</p>
+       <p class="text3">Popular</p> 
+      </div>
+      <div>
+        <button class="follow-button">Follow</button>
+      </div>
+     </div> 
+    </div>   -->
+    <div style="width: 200px;border-width: 2px;">
+        <div class="edit">
+            <div >
+                <img class="picture"src="catpic.jpeg">
+            </div>  
+            <div class="row-2">
+                <div style="font-family:roboto,arial;color:black;font-weight: bold;font-size:20px;height: 20px;padding-left: 5px;padding-bottom: 3px;">Oliver</div>
+                <div class="row-2-2">
+                    <div>
+                        <img class="profile-picture" src="my-channel.jpeg">
+                    </div>
+                    <div style="font-family: roboto,arial;font-size:12px ;font-weight: lighter ;color:rgb(99, 95, 95);padding-top: 8px;padding-left: 5px;">2 mutual friends</div>
+                </div>
+                <div>
+                    <button class="follow-button">Add Friend</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
